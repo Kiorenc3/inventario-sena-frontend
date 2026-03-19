@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-main-layout',
-  standalone: true, // 🔥 ESTO FALTABA
-  imports: [RouterOutlet], // 🔥 IMPORTANTE
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './main-layout.component.html',
-  styleUrls: ['./main-layout.component.css']
+  styleUrl: './main-layout.component.css'
 })
 export class MainLayoutComponent {
 
