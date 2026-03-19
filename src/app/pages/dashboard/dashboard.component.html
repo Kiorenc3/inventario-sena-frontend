@@ -1,1 +1,121 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+  <div class="dashboard-header">
+    <h1>Dashboard - Módulo de Inventario</h1>
+    <p>Vista general del estado del inventario en tiempo real</p>
+  </div>
+
+  <!-- Tarjetas de resumen -->
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-top">
+        <span class="card-label">Total de Items</span>
+        <span class="card-icon blue">◉</span>
+      </div>
+      <div class="card-value">1,284</div>
+      <div class="card-sub green">+4% desde el mes pasado</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-label">Valor Total Inventario</span>
+        <span class="card-icon green">$</span>
+      </div>
+      <div class="card-value">$87,450,000</div>
+      <div class="card-sub green">+4.2% desde el mes pasado</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-label">Productos Bajo Stock</span>
+        <span class="card-icon orange">△</span>
+      </div>
+      <div class="card-value">23</div>
+      <div class="card-sub red">+4% desde el mes pasado</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <span class="card-label">Facturas Pendientes</span>
+        <span class="card-icon purple">◫</span>
+      </div>
+      <div class="card-value">8</div>
+      <div class="card-sub green">-4 desde el mes pasado</div>
+    </div>
+  </div>
+
+  <!-- Sección del medio -->
+  <div class="mid-grid">
+
+    <!-- Alertas de stock mínimo -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-icon orange">△</span>
+        <div>
+          <div class="panel-title">Alertas de Stock Mínimo</div>
+          <div class="panel-sub">Productos que requieren reposición urgente</div>
+        </div>
+      </div>
+      <div class="alert-list">
+        <div class="alert-item" *ngFor="let item of alertasStock">
+          <div class="alert-info">
+            <span class="alert-name">{{ item.nombre }}</span>
+            <span class="alert-meta">{{ item.tipo }} · Stock: {{ item.stock }} · Mín: {{ item.min }}</span>
+          </div>
+          <div class="alert-bar-wrap">
+            <div class="alert-bar" [style.width.%]="(item.stock / item.min) * 100"
+                 [class.danger]="item.stock < item.min"
+                 [class.warning]="item.stock >= item.min">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Movimientos recientes -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-icon blue">◷</span>
+        <div>
+          <div class="panel-title">Movimientos Recientes</div>
+          <div class="panel-sub">Últimas transacciones del inventario</div>
+        </div>
+      </div>
+      <div class="mov-list">
+        <div class="mov-item" *ngFor="let mov of movimientos">
+          <div class="mov-info">
+            <span class="mov-name">{{ mov.producto }}</span>
+            <span class="mov-meta">{{ mov.tipo }} · {{ mov.usuario }}</span>
+          </div>
+          <div class="mov-right">
+            <span class="mov-cantidad" [class.positive]="mov.cantidad > 0" [class.negative]="mov.cantidad < 0">
+              {{ mov.cantidad > 0 ? '+' : '' }}{{ mov.cantidad }}
+            </span>
+            <span class="mov-fecha">{{ mov.fecha }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Presupuesto -->
+  <div class="panel">
+    <div class="panel-header">
+      <div>
+        <div class="panel-title">Presupuesto General de Inventario</div>
+        <div class="panel-sub">Control de gastos y planificación de compras para el mes actual</div>
+      </div>
+    </div>
+    <div class="budget-grid">
+      <div class="budget-item" *ngFor="let b of presupuesto">
+        <div class="budget-label">{{ b.label }}</div>
+        <div class="budget-value">{{ b.valor }}</div>
+        <div class="budget-bar-wrap">
+          <div class="budget-bar" [style.width.%]="b.porcentaje" [class]="b.color"></div>
+        </div>
+        <div class="budget-sub">{{ b.sub }}</div>
+      </div>
+    </div>
+  </div>
+
+</div>

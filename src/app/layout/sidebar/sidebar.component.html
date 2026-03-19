@@ -1,1 +1,71 @@
-<p>nombre-componente works!</p>
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <span class="logo-text">SENA</span>
+    <span class="logo-sub">Sistema de Gestión</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-section">
+      <span class="nav-section-title">Panel Principal</span>
+      <a routerLink="/dashboard" routerLinkActive="active" class="nav-item">
+        <span class="nav-icon">⊞</span>
+        Dashboard
+      </a>
+    </div>
+
+    <div class="nav-section">
+      <span class="nav-section-title">Gestión de Inventario</span>
+      <a routerLink="/bienes" routerLinkActive="active" class="nav-item">
+        <span class="nav-icon">◫</span>
+        Gestión de Bienes
+      </a>
+      <a routerLink="/prefacturas" routerLinkActive="active" class="nav-item">
+        <span class="nav-icon">◨</span>
+        Gestión de Pre Facturas
+      </a>
+      <a routerLink="/formato" routerLinkActive="active" class="nav-item">
+        <span class="nav-icon">▤</span>
+        Formato GIL-F-014
+      </a>
+      <a routerLink="/factura-global" routerLinkActive="active" class="nav-item">
+        <span class="nav-icon">▣</span>
+        Factura Global
+      </a>
+    </div>
+
+    <div class="nav-section">
+      <span class="nav-section-title">Movimientos y Control</span>
+      <a routerLink="/entradas-salidas" routerLinkActive="active" class="nav-item">
+        <span class="nav-icon">⇅</span>
+        Entradas y Salidas
+      </a>
+      <a routerLink="/alertas" routerLinkActive="active" class="nav-item">
+        <span class="nav-icon">△</span>
+        Alertas de Stock Mínimo
+      </a>
+    </div>
+
+    <div class="nav-section">
+      <span class="nav-section-title">Administración</span>
+      <a routerLink="/presupuesto" routerLinkActive="active" class="nav-item">
+        <span class="nav-icon">$</span>
+        Presupuesto General
+      </a>
+      <a routerLink="/conciliacion" routerLinkActive="active" class="nav-item">
+        <span class="nav-icon">⋮</span>
+        Conciliación de Inventario
+      </a>
+    </div>
+  </nav>
+
+  <div class="sidebar-footer">
+    <a class="nav-item" href="#">
+      <span class="nav-icon">⚙</span>
+      Configuración
+    </a>
+    <a class="nav-item" href="#">
+      <span class="nav-icon">↩</span>
+      Cerrar Sesión
+    </a>
+  </div>
+</aside>

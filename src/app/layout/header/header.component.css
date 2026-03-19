@@ -1,8 +1,67 @@
 .header {
-  height: 60px;
+  height: 56px;
+  min-height: 56px;
   background: #ffffff;
+  border-bottom: 1px solid #e8e8e4;
   display: flex;
   align-items: center;
-  padding: 0 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-breadcrumb {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.header-page {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+
+.user-role {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #39A900;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
