@@ -1,0 +1,35 @@
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <img src="assets/img/caja_logo.png">
+
+    <h2 class="logo">SENA Inventario</h2>
+
+    <nav>
+      <a routerLink="/dashboard">Dashboard</a>
+      <a routerLink="/bienes">Bienes</a>
+      <a routerLink="/movimientos">Movimientos</a>
+      <a routerLink="/facturacion">Facturación</a>
+      <a routerLink="/administracion">Administración</a>
+    </nav>
+
+  </aside>
+
+  <!-- CONTENIDO -->
+  <div class="main">
+
+    <!-- HEADER -->
+    <header class="header">
+      <span>Bienvenido Instructor 👨‍🏫</span>
+    </header>
+
+    <!-- CONTENIDO DINÁMICO -->
+    <section class="content">
+      <router-outlet></router-outlet>
+    </section>
+
+  </div>
+
+</div>
